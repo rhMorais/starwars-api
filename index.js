@@ -1,5 +1,8 @@
 const app = require('express')();
 const axios = require('axios');
+var cors = require('cors');
+
+app.use(cors())
 
 const baseURL = 'https://swapi.dev/api/';
 
