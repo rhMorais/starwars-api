@@ -1,0 +1,19 @@
+apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
+kind: Deployment
+metadata:
+  name: starwars-api-deployment
+spec:
+  selector:
+    matchLabels:
+      app: starwars-api
+  replicas: 2 # tells deployment to run 2 pods matching the template
+  template:
+    metadata:
+      labels:
+        app: starwars-api
+    spec:
+      containers:
+      - name: starwars-api
+        image: rhmorais/starwars-api
+        ports:
+        - containerPort: 8080
